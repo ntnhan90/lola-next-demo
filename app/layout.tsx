@@ -1,8 +1,9 @@
+import type { Metadata } from "next";
 import "./globals.scss";
-
-export const metadata = {
+import { CakeProvider } from "./context/CakeContext";
+export const metadata: Metadata = {
   title: "Lola Cake Demo",
-  description: "Cake Customizer",
+  description: "Cake Configurator",
 };
 
 export default function RootLayout({
@@ -10,9 +11,14 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <CakeProvider>
+          {children}
+        </CakeProvider>
+      </body>
     </html>
   );
 }

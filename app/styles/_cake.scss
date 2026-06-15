@@ -1,0 +1,85 @@
+.cake-canvas {
+  height: 620px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  position: relative;
+}
+
+.cake-shadow {
+  position: absolute;
+
+  bottom: 150px;
+
+  width: 320px;
+
+  height: 35px;
+
+  border-radius: 50%;
+
+  background: rgba(0,0,0,.18);
+
+  filter: blur(18px);
+}
+
+.cake {
+  width: 270px;
+
+  height: 170px;
+
+  position: relative;
+
+  border-radius: 20px;
+
+  background: #f2d7aa;
+
+  animation: float 4s infinite ease;
+}
+
+.cake-frosting {
+  position: absolute;
+
+  inset: 0;
+
+  border-radius: 20px;
+
+  background: #ffcb00;
+}
+
+.cake-border {
+  position: absolute;
+
+  inset: -8px;
+
+  border: 8px solid #ff93be;
+
+  border-radius: 26px;
+}
+
+.cake-plate {
+  position: absolute;
+
+  bottom: 120px;
+
+  width: 340px;
+
+  height: 28px;
+
+  background: #ffffff;
+
+  border-radius: 50%;
+}
+
+@keyframes float{
+
+50%{
+
+transform:translateY(-10px);
+
+}
+
+}

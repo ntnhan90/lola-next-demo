@@ -1,24 +1,9 @@
-@use "./styles/cake";
 @import "bootstrap/scss/bootstrap";
+@import "bootstrap-icons/font/bootstrap-icons.css";
 
+@import "./styles/reset";
+@import "./styles/theme";
+@import "./styles/layout";
+@import "./styles/preview";
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html,
-body {
-  background: #faf7f2;
-  font-family: Inter, sans-serif;
-}
-
-img {
-  max-width: 100%;
-  display: block;
-}
-
-button {
-  cursor: pointer;
-}
+@import "./styles/config";
