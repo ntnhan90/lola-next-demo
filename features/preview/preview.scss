@@ -1,0 +1,53 @@
+.cake-preview {
+  width: 500px;
+  height: 500px;
+  position: relative;
+  margin: auto;
+}
+
+.cake-shadow {
+  position: absolute;
+  left: 50%;
+  bottom: 65px;
+  transform: translateX(-50%);
+
+  width: 330px;
+  height: 30px;
+
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.12);
+
+  filter: blur(10px);
+}
+
+.cake-base {
+  position: absolute;
+
+  left: 50%;
+  bottom: 80px;
+
+  transform: translateX(-50%);
+
+  width: 300px;
+  height: 170px;
+
+  border-radius: 0 0 140px 140px;
+
+  background: #dca76c;
+}
+
+.cake-frosting {
+  position: absolute;
+
+  left: 50%;
+  bottom: 195px;
+
+  transform: translateX(-50%);
+
+  width: 315px;
+  height: 120px;
+
+  border-radius: 150px 150px 80px 80px;
+
+  transition: all .35s ease;
+}

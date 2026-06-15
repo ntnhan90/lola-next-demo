@@ -1,4 +1,6 @@
-const product = {
+import { Product } from "@/app/types/product";
+
+const product : Product = {
   id: 1,
   slug: "classic-round",
   name: "Classic Round",

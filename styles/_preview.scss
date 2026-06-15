@@ -1,0 +1,171 @@
+.preview-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.preview-header h2 {
+  font-weight: 700;
+}
+
+.preview-header p {
+  color: #777;
+}
+
+.cake-stage {
+  height: 600px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  position: relative;
+}
+
+.cake-shadow {
+  width: 320px;
+
+  height: 40px;
+
+  background: rgba(0,0,0,.15);
+
+  filter: blur(20px);
+
+  border-radius: 50%;
+
+  position: absolute;
+
+  bottom: 150px;
+}
+
+.cake-demo{
+  font-size:180px;
+
+  animation: floating 4s ease infinite;
+}
+
+@keyframes floating{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-12px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+
+.cake-preview {
+
+    position: relative;
+
+    width: 480px;
+
+    height: 480px;
+
+    margin:auto;
+}
+
+.cake-base{
+
+    position:absolute;
+
+    bottom:80px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:320px;
+
+    height:170px;
+
+    background:#d89f67;
+
+    border-radius:0 0 150px 150px;
+}
+
+.cake-frosting{
+
+    position:absolute;
+
+    bottom:190px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:330px;
+
+    height:120px;
+
+    border-radius:160px 160px 80px 80px;
+
+    transition:.35s;
+}
+
+.cake-preview {
+  width: 500px;
+  height: 500px;
+  position: relative;
+  margin: auto;
+}
+
+.cake-shadow {
+  position: absolute;
+  left: 50%;
+  bottom: 65px;
+  transform: translateX(-50%);
+
+  width: 330px;
+  height: 30px;
+
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.12);
+
+  filter: blur(10px);
+}
+
+.cake-base {
+  position: absolute;
+
+  left: 50%;
+  bottom: 80px;
+
+  transform: translateX(-50%);
+
+  width: 300px;
+  height: 170px;
+
+  border-radius: 0 0 140px 140px;
+
+  background: #dca76c;
+}
+
+.cake-frosting {
+  position: absolute;
+
+  left: 50%;
+  bottom: 195px;
+
+  transform: translateX(-50%);
+
+  width: 315px;
+  height: 120px;
+
+  border-radius: 150px 150px 80px 80px;
+
+  transition: all .35s ease;
+}

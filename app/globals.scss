@@ -1,9 +1,56 @@
 @import "bootstrap/scss/bootstrap";
 @import "bootstrap-icons/font/bootstrap-icons.css";
 
-@import "./styles/reset";
-@import "./styles/theme";
-@import "./styles/layout";
-@import "./styles/preview";
+@import "../styles/reset";
+@import "../styles/theme";
+@import "../styles/layout";
+@import "../styles/preview";
 
-@import "./styles/config";
+@import "../styles/config";
+
+.option-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.option-card {
+  border: 2px solid #eee;
+  border-radius: 16px;
+  background: #fff;
+  padding: 14px;
+  font-weight: 600;
+  transition: all .2s;
+  cursor: pointer;
+
+  &:hover {
+    border-color: #ffcb00;
+  }
+
+  &.active {
+    border-color: #ffcb00;
+    background: #fff8d9;
+  }
+}
+
+.color-card {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 2px solid #eee;
+  background: #fff;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+
+  span {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+  }
+
+  &.active {
+    border-color: #ffcb00;
+  }
+}

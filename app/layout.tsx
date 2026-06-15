@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.scss";
-import { CakeProvider } from "./context/CakeContext";
+import { CakeProvider } from "@/context/CakeContext";
 export const metadata: Metadata = {
   title: "Lola Cake Demo",
   description: "Cake Configurator",

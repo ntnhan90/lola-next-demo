@@ -1,6 +1,6 @@
 "use client";
 
-import { useCake } from "@/app/hooks/useCake";
+import { useCake } from "@/hooks/useCake";
 
 export default function Sidebar() {
   const { state } = useCake();
