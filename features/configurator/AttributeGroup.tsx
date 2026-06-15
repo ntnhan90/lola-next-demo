@@ -1,6 +1,6 @@
 "use client";
 
-import { AttributeSet } from "@/app/types/product";
+import { AttributeSet } from "@/types/product";
 
 import OptionRenderer from "./OptionRenderer";
 
@@ -22,6 +22,7 @@ export default function AttributeGroup({
             type={attributeSet.displayType}
             option={option}
             attributeSetId={attributeSet.id}
+            selectionType={attributeSet.selectionType}
           />
         ))}
 

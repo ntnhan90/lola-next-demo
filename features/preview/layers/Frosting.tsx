@@ -1,27 +1,34 @@
 "use client";
 
+import LayerImage from "../LayerImage";
+
 import { useProductStore } from "@/store/productStore";
 
-const COLORS: Record<string, string> = {
-  yellow: "#ffcb00",
-  pink: "#ff89c9",
-  green: "#71d86d",
-};
+import { useProductContext } from "@/context/ProductContext";
+
+import {
+  getLayerPath,
+} from "@/engine/productAssetResolver";
 
 export default function Frosting() {
-  const frosting =
+  const product =
+    useProductContext();
+
+  const color =
     useProductStore(
-      (state) =>
-        state.selectedAttributes["color"]
-    ) ?? "yellow";
+      (s) =>
+        s.selectedAttributes["color"]
+    ) || "yellow";
 
   return (
-    <div
-      className="cake-frosting"
-      style={{
-        background:
-          COLORS[frosting] ?? COLORS.yellow,
-      }}
+    <LayerImage
+      src={getLayerPath(
+        product,
+        "frosting",
+        color
+      )}
+      alt={color}
+      zIndex={3}
     />
   );
 }

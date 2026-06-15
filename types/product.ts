@@ -15,8 +15,8 @@ export interface AttributeSet {
 
   title: string;
 
-  displayType: "text" | "color" | "image";
-
+  displayType: DisplayType;
+  selectionType?: SelectionType;
   options: ProductOption[];
 }
 
@@ -49,3 +49,8 @@ export interface ProductOption {
   price?: number;
 
 }
+
+export type SelectionType =
+  | "single"
+  | "multiple";
+

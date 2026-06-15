@@ -4,7 +4,6 @@
 @import "../styles/reset";
 @import "../styles/theme";
 @import "../styles/layout";
-@import "../styles/preview";
 
 @import "../styles/config";
 
@@ -53,4 +52,68 @@
   &.active {
     border-color: #ffcb00;
   }
+}
+
+.price-row {
+  display: flex;
+
+  justify-content: space-between;
+
+  margin-bottom: 8px;
+}
+
+.price-total {
+  display: flex;
+
+  justify-content: space-between;
+
+  font-size: 1.25rem;
+
+  font-weight: 700;
+}
+
+.config-summary {
+  padding: 16px;
+  border-radius: 18px;
+  background: #faf7f2;
+  margin-bottom: 20px;
+}
+
+.config-summary h5 {
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.config-summary__item {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 8px 0;
+  font-size: 0.95rem;
+}
+
+.config-summary__item span {
+  color: #777;
+}
+
+.config-summary__item strong {
+  text-align: right;
+}
+
+.config-summary__empty {
+  margin: 0;
+  color: #999;
+}
+.image-card__image {
+  position: relative;
+  width: 120px;
+  height: 90px;
+  margin: 0 auto 10px;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.image-card__image img {
+  object-fit: contain;
 }

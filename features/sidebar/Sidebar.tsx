@@ -1,29 +1,42 @@
 "use client";
 
-import { useCake } from "@/hooks/useCake";
+import { usePrice } from "@/hooks/usePrice";
+import ConfigurationSummary from "./ConfigurationSummary";
 
 export default function Sidebar() {
-  const { state } = useCake();
+  const price = usePrice();
 
   return (
     <aside className="sidebar-panel">
-      <h3>{state.size}</h3>
+      <h3>Classic Round</h3>
 
-      <p>{state.base}</p>
+      <p className="text-muted mb-4">
+        Customize your cake and review your order.
+      </p>
 
-      <p>{state.flavor}</p>
+      <ConfigurationSummary />
 
-      <div
-        style={{
-          width: 40,
-          height: 40,
-          borderRadius: "50%",
-          background: state.color,
-        }}
-      />
+      <hr />
 
-      <button className="btn btn-warning mt-4 w-100">
-        Add to Cart
+      <div className="price-row">
+        <span>Base</span>
+        <span>${price.basePrice}</span>
+      </div>
+
+      <div className="price-row">
+        <span>Extras</span>
+        <span>${price.extras}</span>
+      </div>
+
+      <hr />
+
+      <div className="price-total">
+        <span>Total</span>
+        <strong>${price.total}</strong>
+      </div>
+
+      <button className="btn btn-warning w-100 mt-4">
+        Add To Cart
       </button>
     </aside>
   );

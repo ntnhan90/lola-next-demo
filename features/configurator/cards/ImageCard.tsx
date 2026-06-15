@@ -1,44 +1,56 @@
 "use client";
 
 import Image from "next/image";
-
 import { useProductStore } from "@/store/productStore";
-import { OptionRendererProps } from "../types";
+import type { OptionRendererProps } from "../types";
 
 export default function ImageCard({
   option,
   attributeSetId,
+  selectionType,
 }: OptionRendererProps) {
-  const { selectedAttributes, setAttribute } = useProductStore();
+  const {
+    selectedAttributes,
+    selectedMultiAttributes,
+    setAttribute,
+    toggleMultiAttribute,
+  } = useProductStore();
 
-  const active =
-    selectedAttributes[attributeSetId] === option.value;
+  const isMultiple = selectionType === "multiple";
+
+  const active = isMultiple
+    ? (selectedMultiAttributes[attributeSetId] ?? []).includes(option.value)
+    : selectedAttributes[attributeSetId] === option.value;
+
+  const handleClick = () => {
+    if (isMultiple) {
+      toggleMultiAttribute(attributeSetId, option.value);
+      return;
+    }
+
+    setAttribute(attributeSetId, option.value);
+  };
 
   return (
     <button
       type="button"
       className={`image-card ${active ? "active" : ""}`}
-      onClick={() =>
-        setAttribute(attributeSetId, option.value)
-      }
+      onClick={handleClick}
+      aria-pressed={active}
     >
       <div className="image-card__image">
         <Image
-          src={option.image ?? "/images/placeholder.png"}
+          src={option.image ?? "/placeholder.png"}
           alt={option.label}
           fill
-          sizes="96px"
+          sizes="120px"
         />
       </div>
 
-      <span className="image-card__label">
-        {option.label}
-      </span>
+      <span className="image-card__label">{option.label}</span>
 
-      {option.price && option.price > 0 && (
-        <small className="image-card__price">
-          +${option.price}
-        </small>
+      {!!option.price && option.price > 0 && (
+        <small className="image-card__price">+${option.price}</small>
       )}
     </button>
   );
